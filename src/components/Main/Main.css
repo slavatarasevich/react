@@ -1,0 +1,8 @@
+.main-wrapper {
+  margin: 20px 10px;
+}
+
+.tasks {
+  display: flex;
+  flex-direction: column;
+}
