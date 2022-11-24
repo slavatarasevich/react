@@ -1,0 +1,14 @@
+li {
+  display: flex;
+  justify-content: space-between;
+}
+
+.del_btn {
+  border: 1px solid black;
+  width: 20px;
+  text-align: center;
+}
+
+.del_btn :hover {
+  cursor: pointer;
+}

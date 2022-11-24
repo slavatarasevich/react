@@ -1,26 +1,31 @@
 import { useState } from "react";
 import "./Header.css";
+import { v4 as uuidv4 } from "uuid";
 
-export default function Header(taskValue, setValueInput) {
-  const [task, setTask] = useState("");
+export default function Header({ data, setData }) {
+  const [value, setValue] = useState("");
+
+  function handleChange(e) {
+    setValue(e.target.value);
+  }
 
   function addTask() {
-    let newArr = Object.assign([], taskValue);
-    newArr.push(task);
-    setValueInput(newArr);
-    setTask(" ");
+    let newArr = Object.assign([], data);
+    if (value) {
+      newArr.push({
+        id: uuidv4(),
+        namePost: value,
+      });
+      setData(newArr);
+    }
+    setValue("");
   }
-
-  function getValueInput(e) {
-    setTask(e.target.value);
-  }
-
   return (
     <div className="header-wrapper">
       <h1>To DO list</h1>
       <div className="wrapper">
         <input
-          onChange={getValueInput}
+          onChange={handleChange}
           placeholder="type your task here"
           type="text"
         />
