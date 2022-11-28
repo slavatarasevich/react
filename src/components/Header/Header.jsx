@@ -18,7 +18,7 @@ export default function Header({ data, setData }) {
       });
       setData(newArr);
     }
-    setValue("");
+    setValue(" ");
   }
   return (
     <div className="header-wrapper">
